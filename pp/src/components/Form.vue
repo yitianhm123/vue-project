@@ -10,7 +10,7 @@
     export default{
         data(){
             return {
-                message : "iam king"
+                message : "i am king"
             }
         }
     } 
