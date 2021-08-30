@@ -8,8 +8,10 @@
    >
     {{ tab }}
   </button>
-
+<!-- 失活的组件将会被缓存！-->
+<keep-alive>
   <component :is="currentTabComponent" class="tab"></component>
+</keep-alive>
 </div>
 
 </template>
@@ -17,11 +19,17 @@
 
 <script>
 // import {createApp} from 'vue'
-import Home from './tab/tab-home.vue'
+import Home from './tab/tab-home.vue' 
 import Posts from './tab/tab-posts.vue'
 import Archive from './tab/tab-archive.vue'
 
 export default{
+ 
+ components:{
+    Home,
+    Posts,
+    Archive
+ },
  data() {
     return {
       currentTab: 'Home',
@@ -30,7 +38,7 @@ export default{
   },
   computed: {
     currentTabComponent() {
-      return currentTab
+      return  this.currentTab
     }
   }
 }

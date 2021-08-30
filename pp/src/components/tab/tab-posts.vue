@@ -27,6 +27,7 @@
 
 <script>
 export default {
+   name:"tab-posts",
    data() {
     return {
       posts: [
